@@ -1,0 +1,168 @@
+<title>수능 연대기 백과</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Gowun+Dodum&family=Gowun+Batang:wght@700&display=swap">
+<style>
+/* Layout: 펜으로 그린 공책 한 권 — 표지 그림, 손그림 난이도 그래프, 학년도별 카드 */
+:root{
+  --paper:#fbfaf6; --ink:#141414; --ink-soft:#55534d; --rule:#d9d6cc; --fire:#141414;
+  --pen:"Nanum Pen Script","Gowun Dodum",cursive;
+  --body:"Gowun Dodum","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --display:"Gowun Batang","Nanum Myeongjo",serif;
+  color-scheme:light;
+}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;
+  background-image:repeating-linear-gradient(var(--paper) 0 31px,var(--rule) 31px 32px);}
+.wrap{max-width:980px;margin:0 auto;padding-block:32px 64px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1{font-family:var(--display);font-size:clamp(2rem,6vw,3.4rem);line-height:1.15;margin:0;text-wrap:balance}
+h2{font-family:var(--pen);font-weight:400;font-size:2.4rem;margin:48px 0 4px;text-wrap:balance}
+.lead{font-size:1.08rem;max-width:62ch;color:var(--ink)}
+.hand{font-family:var(--pen);font-size:1.5rem;color:var(--ink-soft)}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:center}
+.hero>div{min-width:0}
+@media (max-width:720px){.hero{grid-template-columns:1fr}}
+svg.draw path,svg.draw line,svg.draw rect,svg.draw circle,svg.draw polyline,svg.draw ellipse{
+  fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.stroke{stroke-dasharray:var(--len);stroke-dashoffset:0;animation:ink 2.4s ease-out both;animation-delay:var(--d,0s)}
+@keyframes ink{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}
+.box{border:1.6px solid var(--ink);border-radius:3px 9px 4px 11px/10px 3px 9px 4px;background:var(--paper);padding:16px 18px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px}
+.facts b{font-family:var(--pen);font-size:1.6rem;font-weight:400;display:block;line-height:1.1}
+.chartbox{overflow-x:auto;margin-top:10px}
+#chart{min-width:720px;width:100%;height:auto}
+#chart text{font-family:var(--body);font-size:11px;fill:var(--ink)}
+#chart .lbl{font-family:var(--pen);font-size:18px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.filters button{font-family:var(--pen);font-size:1.3rem;background:var(--paper);color:var(--ink);border:1.4px solid var(--ink);
+  border-radius:12px 4px 10px 5px;padding:2px 14px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.filters button:focus-visible{outline:2px dashed var(--ink);outline-offset:3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.card{min-width:0;display:flex;flex-direction:column;gap:6px}
+.card .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.card .yr{font-family:var(--display);font-size:1.5rem}
+.card .kw{font-family:var(--pen);font-size:1.45rem;border-bottom:1.4px solid var(--ink)}
+.card .row{display:flex;gap:12px;align-items:center;font-size:.92rem;color:var(--ink-soft)}
+.card .row strong{color:var(--ink);font-variant-numeric:tabular-nums}
+.card p{margin:0}
+.meter{display:inline-flex;gap:3px}
+.meter svg{width:16px;height:20px}
+.legend{font-size:.9rem;color:var(--ink-soft)}
+.note{font-size:.88rem;color:var(--ink-soft);margin-top:36px;max-width:70ch}
+.term{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+@media (prefers-reduced-motion:reduce){.stroke{animation:none}}
+</style>
+
+<div class="wrap">
+  <section class="hero">
+    <div>
+      <p class="hand">고1을 위한 펜 그림 백과</p>
+      <h1>수능 연대기 백과</h1>
+      <p class="lead">수능(대학수학능력시험)은 1993년 8월에 처음 치러진 뒤 해마다 11월에 열려요. 어떤 해는 너무 쉬워서 <b>물수능</b>, 어떤 해는 너무 어려워서 <b>불수능</b>이라고 불렸죠. 해마다 만점자는 몇 명이었고, 얼마나 어려웠는지 한 장씩 넘겨 봐요.</p>
+    </div>
+    <svg class="draw" viewBox="0 0 400 300" role="img" aria-label="답안지와 연필, 시계를 그린 펜 그림">
+      <!-- OMR 답안지 -->
+      <path d="M60 40 L250 32 L262 262 L70 270 Z"/>
+      <path d="M78 62 L240 56"/>
+      <g id="omr"></g>
+      <!-- 연필 -->
+      <path d="M230 250 L350 120 L366 134 L246 264 Z"/>
+      <path d="M230 250 L222 278 L246 264"/>
+      <path d="M350 120 L358 111 L374 125 L366 134"/>
+      <path d="M238 256 L358 127"/>
+      <!-- 시계 -->
+      <circle cx="320" cy="62" r="38"/>
+      <path d="M320 62 L320 36 M320 62 L338 72"/>
+      <path d="M320 28 L320 32 M354 62 L350 62 M320 96 L320 92 M286 62 L290 62"/>
+      <path d="M300 24 L310 18 M340 24 L330 18"/>
+    </svg>
+  </section>
+
+  <h2>먼저, 꼭 알아둘 낱말</h2>
+  <div class="term">
+    <div class="box"><b class="hand" style="color:var(--ink)">만점자</b><p>전 과목에서 하나도 안 틀린 학생이에요. 만점자가 많으면 시험이 쉬웠다는 신호예요.</p></div>
+    <div class="box"><b class="hand" style="color:var(--ink)">표준점수</b><p>2005학년도부터 쓰는 점수예요. 내가 평균보다 얼마나 위에 있는지 보여줘서, 시험이 어려울수록 최고점이 높아져요.</p></div>
+    <div class="box"><b class="hand" style="color:var(--ink)">학년도</b><p>"2026학년도 수능"은 2025년 11월에 봐요. 대학에 들어가는 해의 이름을 붙이기 때문이에요.</p></div>
+  </div>
+
+  <h2>한눈에 보는 난이도 그래프</h2>
+  <p class="legend">위로 갈수록 불수능, 아래로 갈수록 물수능이에요. 점의 크기는 만점자가 많을수록 커져요.</p>
+  <div class="chartbox"><svg id="chart" class="draw" viewBox="0 0 960 300" role="img" aria-label="학년도별 난이도 손그림 그래프"></svg></div>
+
+  <h2>학년도별 기록</h2>
+  <div class="filters" role="group" aria-label="시기 고르기">
+    <button type="button" id="f-all" data-f="all" aria-pressed="true">전체</button>
+    <button type="button" id="f-1" data-f="1">1994–2004 · 400점 시대</button>
+    <button type="button" id="f-2" data-f="2">2005–2016 · 표준점수 시대</button>
+    <button type="button" id="f-3" data-f="3">2017– · 절대평가·통합 시대</button>
+  </div>
+  <div class="grid" id="cards"></div>
+
+  <p class="note">만점자 수와 난이도는 신문 보도와 평가원 발표를 바탕으로 정리한 값이에요. 시기마다 '만점'의 기준(원점수 400점, 표준점수, 영어·한국사 절대평가)이 달라서 숫자를 그대로 비교하면 안 돼요. 정확한 숫자가 필요하면 한국교육과정평가원 자료를 꼭 확인하세요. 난이도 1~5는 그해 반응을 바탕으로 매긴 눈대중 점수예요.</p>
+</div>
+
+<script>
+const DATA = [{"year": "1994(1차)", "perfect": "알려진 만점자 없음", "difficulty": 3, "keyword": "첫 수능", "story": "학력고사 대신 처음 생긴 수능이에요. 이해력과 사고력을 묻는 새로운 방식이라 모두 낯설어했어요."}, {"year": "1994(2차)", "perfect": "알려진 만점자 없음", "difficulty": 4, "keyword": "두 번째 시험", "story": "같은 해에 수능을 두 번 봤는데, 2차가 1차보다 어려워서 점수가 떨어진 학생이 많았어요. 그래서 다음 해부터는 한 번만 보게 됐어요."}, {"year": "1995", "perfect": "알려진 만점자 없음", "difficulty": 3, "keyword": "1회 시행", "story": "이 해부터 1년에 한 번만 시험을 봤어요. 난이도는 무난한 편이었어요."}, {"year": "1996", "perfect": "알려진 만점자 없음", "difficulty": 4, "keyword": "마지막 200점", "story": "200점 만점으로 치른 마지막 수능이에요. 꽤 어렵게 느낀 학생이 많았어요."}, {"year": "1997", "perfect": "알려진 만점자 없음", "difficulty": 5, "keyword": "400점 불수능", "story": "이 해부터 400점 만점이 됐는데, 아주 어려워서 300점만 넘어도 상위권이었어요. 대표적인 불수능이에요."}, {"year": "1998", "perfect": "알려진 만점자 없음", "difficulty": 3, "keyword": "쉬워진 수능", "story": "전년도가 너무 어려웠던 탓에 쉽게 냈고, 평균 점수가 크게 올랐어요."}, {"year": "1999", "perfect": "알려진 만점자 없음", "difficulty": 3, "keyword": "선택과목 도입", "story": "수리에서 선택과목이 생기는 등 변화가 있었어요. 점수가 계속 오르는 흐름이었어요."}, {"year": "2000", "perfect": "알려진 만점자 없음", "difficulty": 2, "keyword": "점수 인플레", "story": "쉬운 문제가 많아 고득점자가 크게 늘었어요. 점수 차이가 작아서 변별력 논란이 생겼어요."}, {"year": "2001", "perfect": "66명 (400점 만점)", "difficulty": 1, "keyword": "역대급 물수능", "story": "너무 쉬워서 400점 만점을 받은 학생이 66명이나 나왔어요. 한두 문제만 틀려도 등급이 크게 갈렸어요."}, {"year": "2002", "perfect": "0명 (400점 만점)", "difficulty": 5, "keyword": "이해찬 세대 불수능", "story": "전년도 물수능의 반동으로 갑자기 아주 어렵게 나와서 평균이 크게 떨어졌어요. 시험 끝나고 많은 학생이 충격을 받았어요."}, {"year": "2003", "perfect": "알려진 만점자 없음", "difficulty": 4, "keyword": "여전히 어려움", "story": "전년도보다는 조금 쉬워졌지만 여전히 어려운 편이었어요. 난이도 조절의 어려움을 보여 준 해예요."}, {"year": "2004", "perfect": "알려진 만점자 없음", "difficulty": 3, "keyword": "마지막 원점수", "story": "400점 원점수 체제로 치른 마지막 수능이에요. 다음 해부터는 표준점수와 등급 중심으로 바뀌었어요."}, {"year": "2005", "perfect": "공식 집계 없음(표준점수제라 원점수 만점 개념 약함)", "difficulty": 3, "keyword": "선택형 첫해", "story": "7차 교육과정으로 바뀌면서 과목을 골라 보는 방식이 처음 생겼어요. 점수도 원점수 대신 표준점수로 비교하기 시작했답니다."}, {"year": "2006", "perfect": "자료 없음", "difficulty": 3, "keyword": "표준점수 정착", "story": "선택형 수능 두 번째 해라 제도가 자리를 잡아갔어요. 과목마다 표준점수 차이가 커서 어떤 과목을 고르느냐가 중요했어요."}, {"year": "2007", "perfect": "자료 없음", "difficulty": 3, "keyword": "무난한 해", "story": "큰 사건 없이 비교적 무난하게 치러진 해로 기억돼요. 그래도 탐구 과목 간 유불리 논란은 계속됐어요."}, {"year": "2008", "perfect": "해당 없음(등급제)", "difficulty": 4, "keyword": "수능 등급제", "story": "이 해에는 점수 없이 1~9등급만 알려줬어요. 1문제 차이로 등급이 갈려 억울한 학생이 많아 1년 만에 폐지됐어요."}, {"year": "2009", "perfect": "자료 없음", "difficulty": 4, "keyword": "점수제 복귀", "story": "등급제가 사라지고 표준점수가 다시 공개됐어요. 수리 가형이 꽤 어려웠다는 평가가 많았어요."}, {"year": "2010", "perfect": "자료 없음", "difficulty": 3, "keyword": "EBS 연계 예고", "story": "전반적으로 평이했다는 말이 많았어요. 이 무렵부터 EBS 교재와 수능을 연결하겠다는 정책이 나왔어요."}, {"year": "2011", "perfect": "극소수(정확한 집계 없음)", "difficulty": 5, "keyword": "불수능", "story": "EBS 70% 연계를 했는데도 아주 어려웠던 해예요. 특히 수리와 언어에서 고전한 학생이 많았어요."}, {"year": "2012", "perfect": "약 수십 명 추정", "difficulty": 1, "keyword": "물수능", "story": "전년도와 반대로 너무 쉬워서 한 문제만 틀려도 등급이 내려갔어요. 외국어 만점자가 2% 넘게 나왔어요."}, {"year": "2013", "perfect": "약 수십 명 추정", "difficulty": 2, "keyword": "마지막 언수외", "story": "언어·수리·외국어 체제의 마지막 해예요. 대체로 쉬운 편이라 실수 안 하는 게 중요했어요."}, {"year": "2014", "perfect": "약 30여 명 추정", "difficulty": 3, "keyword": "A/B형 수능", "story": "국어·수학·영어를 쉬운 A형과 어려운 B형 중 골라 보는 방식이 처음 생겼어요. 영어 A/B형은 이 해 한 번만 있었어요."}, {"year": "2015", "perfect": "약 29명", "difficulty": 1, "keyword": "역대급 물수능", "story": "영어 A/B형이 사라진 첫해인데, 수학 B형과 영어가 너무 쉬워 만점을 받아도 1등급이 겨우 되는 수준이었어요. 출제 오류 논란까지 겹쳐 시끄러웠어요."}, {"year": "2016", "perfect": "약 16명", "difficulty": 3, "keyword": "변별력 회복", "story": "전년도 물수능 비판으로 조금 어렵게 냈어요. 국어·수학 A/B형은 이 해까지 유지됐어요."}, {"year": "2017", "perfect": "3명(재학생 2, 졸업생 1, 원점수 기준)", "difficulty": 4, "keyword": "한국사필수", "story": "한국사가 처음으로 필수 과목이 된 해예요. 국어·수학·영어가 모두 꽤 어려워서 만점자가 3명밖에 없었어요."}, {"year": "2018", "perfect": "15명", "difficulty": 3, "keyword": "영어절대평가", "story": "영어가 처음 절대평가로 바뀐 해예요. 포항 지진 때문에 시험이 일주일 미뤄진 것으로도 유명해요."}, {"year": "2019", "perfect": "9명", "difficulty": 5, "keyword": "국어31번", "story": "국어 31번 만유인력 문제가 너무 어려워서 '불수능'의 대명사가 됐어요. 평가원장이 사과까지 했답니다."}, {"year": "2020", "perfect": "15명", "difficulty": 3, "keyword": "무난수능", "story": "전년도 불국어 뒤라 국어는 조금 쉬워졌지만 수학 가형이 까다로웠어요. 전체적으로는 무난했다는 평가예요."}, {"year": "2021", "perfect": "6명", "difficulty": 3, "keyword": "코로나수능", "story": "코로나19 때문에 12월로 미뤄져 마스크를 쓰고 칸막이 앞에서 본 수능이에요. 걱정과 달리 난이도는 비교적 평이했어요."}, {"year": "2022", "perfect": "1명", "difficulty": 5, "keyword": "통합수능", "story": "국어·수학에 선택과목이 생긴 첫 통합수능이에요. 영어까지 어려워서 만점자가 단 1명뿐이었어요."}, {"year": "2023", "perfect": "약 3명(공식 미발표, 추정)", "difficulty": 4, "keyword": "문과침공", "story": "수학 점수가 높은 이과생이 문과 학과로 교차지원하는 '문과침공'이 큰 화제였어요. 수학이 특히 어렵게 느껴졌어요."}, {"year": "2024", "perfect": "1명", "difficulty": 5, "keyword": "킬러문항배제", "story": "정부가 너무 어려운 '킬러문항'을 빼겠다고 했지만 대신 어려운 문제가 많아져 오히려 불수능이 됐어요. 영어 1등급도 5%도 안 됐어요."}, {"year": "2025", "perfect": "약 11명(추정)", "difficulty": 2, "keyword": "의대증원", "story": "의대 정원이 늘어 N수생이 아주 많이 응시한 해예요. 시험이 비교적 쉬워서 만점자도 많이 나왔어요."}, {"year": "2026", "perfect": "자료 없음(최근, 추정 불가)", "difficulty": 4, "keyword": "사탐런", "story": "이과생도 사회탐구를 많이 고르는 '사탐런'이 화제였어요. 영어 등이 어려웠다는 평가가 있지만 정확한 수치는 아직 확인이 필요해요."}];
+const $ = s => document.querySelector(s);
+const NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent&&parent.appendChild(e);return e}
+function inkify(root, base=0, step=0.04){
+  root.querySelectorAll('path,line,rect,circle,polyline,ellipse').forEach((p,i)=>{
+    let len=300;try{len=Math.ceil(p.getTotalLength())+2}catch(e){}
+    p.style.setProperty('--len',len);p.style.setProperty('--d',(base+i*step).toFixed(2)+'s');p.classList.add('stroke');
+  });
+}
+// 답안지 마킹 칸
+const omr=$('#omr');
+for(let r=0;r<6;r++)for(let c=0;c<5;c++){
+  const x=92+c*28+r*1.5,y=86+r*28-c*1.2;
+  el('ellipse',{cx:x,cy:y,rx:7,ry:9},omr);
+  if((r*3+c*2)%5===0) el('path',{d:`M${x-4} ${y-5} L${x+4} ${y+5} M${x+4} ${y-6} L${x-4} ${y+4} M${x-5} ${y} L${x+5} ${y}`},omr);
+}
+inkify(document.querySelector('.hero svg'),0,0.03);
+
+const yNum = y => parseInt(y,10);
+const eraOf = y => yNum(y)<=2004?'1':yNum(y)<=2016?'2':'3';
+const perfNum = p => {const m=String(p).replace(/,/g,'').match(/\d+/);return m?+m[0]:null};
+
+function drawChart(){
+  const svg=$('#chart');svg.innerHTML='';
+  const W=960,H=300,L=56,R=24,T=24,B=48;
+  const n=DATA.length; if(!n) return;
+  const x=i=>L+i*(W-L-R)/Math.max(1,n-1), y=d=>T+(5-d)*(H-T-B)/4;
+  // 손떨림 축
+  el('path',{d:`M${L-6} ${T-6} Q${L-4} ${H/2} ${L-6} ${H-B+4} L${W-R} ${H-B+6}`},svg);
+  for(let d=1;d<=5;d++){
+    el('path',{d:`M${L-10} ${y(d)} L${L-2} ${y(d)+0.6}`},svg);
+    const t=el('text',{x:L-14,y:y(d)+4,'text-anchor':'end'},svg);t.textContent=d;
+  }
+  const lb1=el('text',{x:L,y:T-8,class:'lbl'},svg);lb1.textContent='불수능';
+  const lb2=el('text',{x:L,y:H-B-6,class:'lbl'},svg);lb2.textContent='물수능';
+  let d='';DATA.forEach((r,i)=>{const px=x(i),py=y(r.difficulty)+((i%2)?0.8:-0.8);d+=(i?' L':'M')+px.toFixed(1)+' '+py.toFixed(1)});
+  el('path',{d},svg);
+  DATA.forEach((r,i)=>{
+    const p=perfNum(r.perfect);const rad=p==null?3:Math.min(14,3+Math.sqrt(p)*0.9);
+    el('circle',{cx:x(i),cy:y(r.difficulty),r:rad.toFixed(1)},svg);
+    if(i%2===0||i===n-1){const t=el('text',{x:x(i),y:H-B+24,'text-anchor':'middle'},svg);t.textContent=String(yNum(r.year)).slice(2);}
+  });
+  const cap=el('text',{x:W-R,y:H-8,'text-anchor':'end'},svg);cap.textContent='학년도 (뒤 두 자리)';
+  inkify(svg,0.2,0.02);
+}
+function flame(on){return `<svg class="draw" viewBox="0 0 16 20" aria-hidden="true"><path d="M8 19 C2 17 2 11 6 7 C6 10 8 10 8 10 C7 6 9 3 11 1 C11 6 15 9 14 14 C13 17 11 19 8 19 Z" ${on?'style="fill:var(--ink)"':''}/></svg>`}
+function drawCards(f='all'){
+  const box=$('#cards');box.innerHTML='';
+  DATA.filter(r=>f==='all'||eraOf(r.year)===f).forEach((r,i)=>{
+    const c=document.createElement('article');c.className='card box';
+    c.innerHTML=`<div class="top"><span class="yr">${r.year}학년도</span><span class="kw">${r.keyword}</span></div>
+      <div class="row"><span>만점자 <strong>${r.perfect}</strong></span></div>
+      <div class="row"><span>난이도</span><span class="meter" aria-label="난이도 ${r.difficulty} / 5">${[1,2,3,4,5].map(k=>flame(k<=r.difficulty)).join('')}</span></div>
+      <p>${r.story}</p>`;
+    box.appendChild(c);
+    c.querySelectorAll('svg').forEach(s=>inkify(s,Math.min(i,12)*0.05,0.08));
+  });
+}
+document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.filters button').forEach(o=>o.setAttribute('aria-pressed',o===b));drawCards(b.dataset.f);
+}));
+drawChart();drawCards();
+</script>
